@@ -1,0 +1,6 @@
+C:\Users\dtpal\source\repos\DevToolbox\CommonUtilities\bin\Debug\CommonUtilities.dll
+C:\Users\dtpal\source\repos\DevToolbox\CommonUtilities\bin\Debug\CommonUtilities.pdb
+C:\Users\dtpal\source\repos\DevToolbox\CommonUtilities\obj\Debug\CommonUtilities.csproj.AssemblyReference.cache
+C:\Users\dtpal\source\repos\DevToolbox\CommonUtilities\obj\Debug\CommonUtilities.csproj.CoreCompileInputs.cache
+C:\Users\dtpal\source\repos\DevToolbox\CommonUtilities\obj\Debug\CommonUtilities.dll
+C:\Users\dtpal\source\repos\DevToolbox\CommonUtilities\obj\Debug\CommonUtilities.pdb

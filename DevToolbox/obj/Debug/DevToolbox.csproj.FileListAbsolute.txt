@@ -1,0 +1,17 @@
+C:\Users\dtpal\source\repos\DevToolbox\DevToolbox\bin\Debug\DevToolbox.exe.config
+C:\Users\dtpal\source\repos\DevToolbox\DevToolbox\bin\Debug\DevToolbox.exe
+C:\Users\dtpal\source\repos\DevToolbox\DevToolbox\bin\Debug\DevToolbox.pdb
+C:\Users\dtpal\source\repos\DevToolbox\DevToolbox\obj\Debug\DevToolbox.csproj.AssemblyReference.cache
+C:\Users\dtpal\source\repos\DevToolbox\DevToolbox\obj\Debug\DevToolbox.csproj.SuggestedBindingRedirects.cache
+C:\Users\dtpal\source\repos\DevToolbox\DevToolbox\obj\Debug\DevToolbox.MainWindow.resources
+C:\Users\dtpal\source\repos\DevToolbox\DevToolbox\obj\Debug\DevToolbox.Properties.Resources.resources
+C:\Users\dtpal\source\repos\DevToolbox\DevToolbox\obj\Debug\DevToolbox.csproj.GenerateResource.cache
+C:\Users\dtpal\source\repos\DevToolbox\DevToolbox\obj\Debug\DevToolbox.csproj.CoreCompileInputs.cache
+C:\Users\dtpal\source\repos\DevToolbox\DevToolbox\obj\Debug\DevToolbox.exe
+C:\Users\dtpal\source\repos\DevToolbox\DevToolbox\obj\Debug\DevToolbox.pdb
+C:\Users\dtpal\source\repos\DevToolbox\DevToolbox\bin\Debug\EditLineEndings.exe
+C:\Users\dtpal\source\repos\DevToolbox\DevToolbox\bin\Debug\EditLineEndings.pdb
+C:\Users\dtpal\source\repos\DevToolbox\DevToolbox\bin\Debug\EditLineEndings.exe.config
+C:\Users\dtpal\source\repos\DevToolbox\DevToolbox\obj\Debug\DevToolbox.csproj.CopyComplete
+C:\Users\dtpal\source\repos\DevToolbox\DevToolbox\bin\Debug\CommonUtilities.dll
+C:\Users\dtpal\source\repos\DevToolbox\DevToolbox\bin\Debug\CommonUtilities.pdb

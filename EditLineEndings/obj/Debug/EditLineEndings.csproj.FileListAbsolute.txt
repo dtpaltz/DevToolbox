@@ -1,0 +1,14 @@
+C:\Users\dtpal\source\repos\DevToolbox\EditLineEndings\bin\Debug\EditLineEndings.exe.config
+C:\Users\dtpal\source\repos\DevToolbox\EditLineEndings\bin\Debug\EditLineEndings.exe
+C:\Users\dtpal\source\repos\DevToolbox\EditLineEndings\bin\Debug\EditLineEndings.pdb
+C:\Users\dtpal\source\repos\DevToolbox\EditLineEndings\obj\Debug\EditLineEndings.csproj.AssemblyReference.cache
+C:\Users\dtpal\source\repos\DevToolbox\EditLineEndings\obj\Debug\EditLineEndings.csproj.SuggestedBindingRedirects.cache
+C:\Users\dtpal\source\repos\DevToolbox\EditLineEndings\obj\Debug\EditLineEndings.Properties.Resources.resources
+C:\Users\dtpal\source\repos\DevToolbox\EditLineEndings\obj\Debug\EditLineEndings.csproj.GenerateResource.cache
+C:\Users\dtpal\source\repos\DevToolbox\EditLineEndings\obj\Debug\EditLineEndings.csproj.CoreCompileInputs.cache
+C:\Users\dtpal\source\repos\DevToolbox\EditLineEndings\obj\Debug\EditLineEndings.exe
+C:\Users\dtpal\source\repos\DevToolbox\EditLineEndings\obj\Debug\EditLineEndings.pdb
+C:\Users\dtpal\source\repos\DevToolbox\EditLineEndings\bin\Debug\CommonUtilities.dll
+C:\Users\dtpal\source\repos\DevToolbox\EditLineEndings\bin\Debug\CommonUtilities.pdb
+C:\Users\dtpal\source\repos\DevToolbox\EditLineEndings\obj\Debug\EditLineEndings.csproj.CopyComplete
+C:\Users\dtpal\source\repos\DevToolbox\EditLineEndings\obj\Debug\EditLineEndings.LineEditorForm.resources
