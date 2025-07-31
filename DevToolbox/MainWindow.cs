@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CommonUtilities;
+using System;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -44,6 +45,26 @@ namespace DevToolbox
 		{
 			var currLines = mainTextBox.Lines.ToList();
 			mainTextBox.Lines = currLines.Where(x => !string.IsNullOrEmpty(x)).ToArray();
+		}
+
+		private void extraWhitespaceToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			var lines = mainTextBox.Lines;
+
+			for (int i = 0; i < lines.Length; i++)
+			{
+				var ln = lines[i];
+
+				if (string.IsNullOrEmpty(ln))
+				{
+					continue;
+				}
+
+				var newLn = ln.TrimExtra();
+				lines[i] = newLn.Trim();
+			}
+
+			mainTextBox.Lines = lines;
 		}
 	}
 }

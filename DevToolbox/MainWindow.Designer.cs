@@ -41,6 +41,7 @@
 			this.mainTextBox = new System.Windows.Forms.TextBox();
 			this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.emptyLinesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.extraWhitespaceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -144,7 +145,8 @@
 			// removeToolStripMenuItem
 			// 
 			this.removeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.emptyLinesToolStripMenuItem});
+            this.emptyLinesToolStripMenuItem,
+            this.extraWhitespaceToolStripMenuItem});
 			this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
 			this.removeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.removeToolStripMenuItem.Text = "Remove";
@@ -155,6 +157,13 @@
 			this.emptyLinesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.emptyLinesToolStripMenuItem.Text = "Empty Lines";
 			this.emptyLinesToolStripMenuItem.Click += new System.EventHandler(this.emptyLinesToolStripMenuItem_Click);
+			// 
+			// extraWhitespaceToolStripMenuItem
+			// 
+			this.extraWhitespaceToolStripMenuItem.Name = "extraWhitespaceToolStripMenuItem";
+			this.extraWhitespaceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.extraWhitespaceToolStripMenuItem.Text = "Extra Whitespace";
+			this.extraWhitespaceToolStripMenuItem.Click += new System.EventHandler(this.extraWhitespaceToolStripMenuItem_Click);
 			// 
 			// MainWindow
 			// 
@@ -190,6 +199,7 @@
 		private System.Windows.Forms.ToolStripMenuItem selectWordToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem emptyLinesToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem extraWhitespaceToolStripMenuItem;
 	}
 }
 
