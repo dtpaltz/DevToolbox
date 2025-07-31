@@ -45,8 +45,9 @@
 			this.lastWordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.compareToPreviousToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.statusStrip = new System.Windows.Forms.StatusStrip();
-			this.mainTextBox = new System.Windows.Forms.TextBox();
 			this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+			this.mainTextBox = new System.Windows.Forms.TextBox();
+			this.joinSelectedLinesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip.SuspendLayout();
 			this.statusStrip.SuspendLayout();
 			this.SuspendLayout();
@@ -116,7 +117,8 @@
 			this.operationsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.selectWordToolStripMenuItem,
             this.removeToolStripMenuItem,
-            this.compareToPreviousToolStripMenuItem});
+            this.compareToPreviousToolStripMenuItem,
+            this.joinSelectedLinesToolStripMenuItem});
 			this.operationsToolStripMenuItem.Name = "operationsToolStripMenuItem";
 			this.operationsToolStripMenuItem.Size = new System.Drawing.Size(85, 21);
 			this.operationsToolStripMenuItem.Text = "Operations";
@@ -193,6 +195,12 @@
 			this.statusStrip.TabIndex = 1;
 			this.statusStrip.Text = "statusStrip1";
 			// 
+			// toolStripStatusLabel
+			// 
+			this.toolStripStatusLabel.Name = "toolStripStatusLabel";
+			this.toolStripStatusLabel.Size = new System.Drawing.Size(66, 17);
+			this.toolStripStatusLabel.Text = "No status...";
+			// 
 			// mainTextBox
 			// 
 			this.mainTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -206,11 +214,12 @@
 			this.mainTextBox.WordWrap = false;
 			this.mainTextBox.TextChanged += new System.EventHandler(this.mainTextBox_TextChanged);
 			// 
-			// toolStripStatusLabel
+			// joinSelectedLinesToolStripMenuItem
 			// 
-			this.toolStripStatusLabel.Name = "toolStripStatusLabel";
-			this.toolStripStatusLabel.Size = new System.Drawing.Size(66, 17);
-			this.toolStripStatusLabel.Text = "No status...";
+			this.joinSelectedLinesToolStripMenuItem.Name = "joinSelectedLinesToolStripMenuItem";
+			this.joinSelectedLinesToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+			this.joinSelectedLinesToolStripMenuItem.Text = "Join Selected Lines";
+			this.joinSelectedLinesToolStripMenuItem.Click += new System.EventHandler(this.joinSelectedLinesToolStripMenuItem_Click);
 			// 
 			// MainWindow
 			// 
@@ -255,6 +264,7 @@
 		private System.Windows.Forms.ToolStripMenuItem firstWordToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem compareToPreviousToolStripMenuItem;
 		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
+		private System.Windows.Forms.ToolStripMenuItem joinSelectedLinesToolStripMenuItem;
 	}
 }
 

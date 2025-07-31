@@ -207,5 +207,46 @@ namespace DevToolbox
 			string space = "               ";
 			toolStripStatusLabel.Text = $"Length: {mainTextBox.Text.Length}{space}Lines: {mainTextBox.Lines.Length}{space}History: {m_history.Count()}";
 		}
+
+		private void joinSelectedLinesToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			string[] allLines = mainTextBox.Lines;
+			int selectionStart = mainTextBox.SelectionStart;
+			int selectionEnd = selectionStart + mainTextBox.SelectionLength;
+
+			int startLineIndex = mainTextBox.GetLineFromCharIndex(selectionStart);
+			int endLineIndex = mainTextBox.GetLineFromCharIndex(selectionEnd);
+
+			// Adjust endLineIndex if the selection ends precisely at the start of a new line
+			if (selectionEnd > 0 && selectionEnd == mainTextBox.Text.Length && mainTextBox.Text.EndsWith(Environment.NewLine))
+			{
+				// If the selection ends at the end of the last line and includes the newline,
+				// ensure the last line is included in the join.
+				// No adjustment needed here if GetLineFromCharIndex handles it correctly.
+			}
+			else if (selectionEnd < mainTextBox.Text.Length && mainTextBox.Text[selectionEnd] == '\r' && mainTextBox.Text[selectionEnd + 1] == '\n')
+			{
+				// If selection ends at a newline character, ensure the line before the newline is included.
+				// GetLineFromCharIndex usually handles this correctly, but a check can be added if needed.
+			}
+			else if (selectionEnd > 0 && mainTextBox.Text.Length > selectionEnd && mainTextBox.GetLineFromCharIndex(selectionEnd - 1) != endLineIndex)
+			{
+				// If the selection ends within a line, ensure that line is included.
+				// This adjustment might be needed if the last character of the selection is not the last character of the line.
+				endLineIndex = mainTextBox.GetLineFromCharIndex(selectionEnd - 1);
+			}
+
+			// Ensure startLineIndex is not greater than endLineIndex after adjustments
+			if (startLineIndex > endLineIndex)
+			{
+				startLineIndex = endLineIndex;
+			}
+
+			string[] selectedLines = allLines.Skip(startLineIndex).Take(endLineIndex - startLineIndex + 1).ToArray();
+			string joinedText = string.Join(" ", selectedLines); // Join with a space
+
+			// Replace the selected text with the joined text
+			mainTextBox.SelectedText = joinedText;
+		}
 	}
 }
