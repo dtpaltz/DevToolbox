@@ -33,8 +33,6 @@
 			this.copyAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.lineEndingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.operationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.selectWordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,6 +46,7 @@
 			this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
 			this.mainTextBox = new System.Windows.Forms.TextBox();
 			this.joinSelectedLinesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.lineEndingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip.SuspendLayout();
 			this.statusStrip.SuspendLayout();
 			this.SuspendLayout();
@@ -58,7 +57,6 @@
 			this.menuStrip.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.editToolStripMenuItem,
             this.operationsToolStripMenuItem});
 			this.menuStrip.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip.Name = "menuStrip";
@@ -97,28 +95,14 @@
 			this.closeToolStripMenuItem.Text = "Close";
 			this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
 			// 
-			// editToolStripMenuItem
-			// 
-			this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lineEndingsToolStripMenuItem});
-			this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-			this.editToolStripMenuItem.Size = new System.Drawing.Size(42, 21);
-			this.editToolStripMenuItem.Text = "Edit";
-			// 
-			// lineEndingsToolStripMenuItem
-			// 
-			this.lineEndingsToolStripMenuItem.Name = "lineEndingsToolStripMenuItem";
-			this.lineEndingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-			this.lineEndingsToolStripMenuItem.Text = "Line Endings";
-			this.lineEndingsToolStripMenuItem.Click += new System.EventHandler(this.lineEndingsToolStripMenuItem_Click);
-			// 
 			// operationsToolStripMenuItem
 			// 
 			this.operationsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.selectWordToolStripMenuItem,
             this.removeToolStripMenuItem,
             this.compareToPreviousToolStripMenuItem,
-            this.joinSelectedLinesToolStripMenuItem});
+            this.joinSelectedLinesToolStripMenuItem,
+            this.lineEndingsToolStripMenuItem});
 			this.operationsToolStripMenuItem.Name = "operationsToolStripMenuItem";
 			this.operationsToolStripMenuItem.Size = new System.Drawing.Size(85, 21);
 			this.operationsToolStripMenuItem.Text = "Operations";
@@ -222,6 +206,12 @@
 			this.joinSelectedLinesToolStripMenuItem.Text = "Join Selected Lines";
 			this.joinSelectedLinesToolStripMenuItem.Click += new System.EventHandler(this.joinSelectedLinesToolStripMenuItem_Click);
 			// 
+			// lineEndingsToolStripMenuItem
+			// 
+			this.lineEndingsToolStripMenuItem.Name = "lineEndingsToolStripMenuItem";
+			this.lineEndingsToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+			this.lineEndingsToolStripMenuItem.Text = "Edit Line Endings";
+			// 
 			// MainWindow
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -250,8 +240,6 @@
 		private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
 		private System.Windows.Forms.StatusStrip statusStrip;
 		private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem lineEndingsToolStripMenuItem;
 		private System.Windows.Forms.TextBox mainTextBox;
 		private System.Windows.Forms.ToolStripMenuItem copyAllToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem operationsToolStripMenuItem;
@@ -266,6 +254,7 @@
 		private System.Windows.Forms.ToolStripMenuItem compareToPreviousToolStripMenuItem;
 		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
 		private System.Windows.Forms.ToolStripMenuItem joinSelectedLinesToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem lineEndingsToolStripMenuItem;
 	}
 }
 
