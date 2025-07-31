@@ -80,9 +80,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CommonUtilities\CommonUtilities.csproj">
+      <Project>{50aeca5b-3710-4b68-b96a-52efd9d4be13}</Project>
+      <Name>CommonUtilities</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EditLineEndings\EditLineEndings.csproj">
       <Project>{e162927b-47c0-4bb6-b14b-77708ea3f981}</Project>
       <Name>EditLineEndings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WordSelector\WordSelector.csproj">
+      <Project>{3da42d68-005f-4c7e-b50b-945bbdaa98c1}</Project>
+      <Name>WordSelector</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

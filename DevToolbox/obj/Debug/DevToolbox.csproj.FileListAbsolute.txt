@@ -15,3 +15,6 @@ C:\Users\dtpal\source\repos\DevToolbox\DevToolbox\bin\Debug\EditLineEndings.exe.
 C:\Users\dtpal\source\repos\DevToolbox\DevToolbox\obj\Debug\DevToolbox.csproj.CopyComplete
 C:\Users\dtpal\source\repos\DevToolbox\DevToolbox\bin\Debug\CommonUtilities.dll
 C:\Users\dtpal\source\repos\DevToolbox\DevToolbox\bin\Debug\CommonUtilities.pdb
+C:\Users\dtpal\source\repos\DevToolbox\DevToolbox\bin\Debug\WordSelector.exe
+C:\Users\dtpal\source\repos\DevToolbox\DevToolbox\bin\Debug\WordSelector.pdb
+C:\Users\dtpal\source\repos\DevToolbox\DevToolbox\bin\Debug\WordSelector.exe.config

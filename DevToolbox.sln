@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EditLineEndings", "EditLine
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonUtilities", "CommonUtilities\CommonUtilities.csproj", "{50AECA5B-3710-4B68-B96A-52EFD9D4BE13}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordSelector", "WordSelector\WordSelector.csproj", "{3DA42D68-005F-4C7E-B50B-945BBDAA98C1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{50AECA5B-3710-4B68-B96A-52EFD9D4BE13}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50AECA5B-3710-4B68-B96A-52EFD9D4BE13}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50AECA5B-3710-4B68-B96A-52EFD9D4BE13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DA42D68-005F-4C7E-B50B-945BBDAA98C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DA42D68-005F-4C7E-B50B-945BBDAA98C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DA42D68-005F-4C7E-B50B-945BBDAA98C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DA42D68-005F-4C7E-B50B-945BBDAA98C1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
