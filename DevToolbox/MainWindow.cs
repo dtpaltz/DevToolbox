@@ -89,5 +89,57 @@ namespace DevToolbox
 
 			mainTextBox.Lines = lines;
 		}
+
+		private void removeLastWordToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			var lines = mainTextBox.Lines;
+
+			for (int i = 0; i < lines.Length; i++)
+			{
+				var ln = lines[i];
+
+				if (string.IsNullOrEmpty(ln))
+				{
+					continue;
+				}
+
+				var lnWords = Utils.GetWords(ln);
+
+				if (lnWords.Length > 0)
+				{
+					ln = Utils.ReplaceLastOccurrence(ln, lnWords[lnWords.Length - 1], string.Empty);
+				}
+
+				lines[i] = ln;
+			}
+
+			mainTextBox.Lines = lines;
+		}
+
+		private void removeFirstWordToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			var lines = mainTextBox.Lines;
+
+			for (int i = 0; i < lines.Length; i++)
+			{
+				var ln = lines[i];
+
+				if (string.IsNullOrEmpty(ln))
+				{
+					continue;
+				}
+
+				var lnWords = Utils.GetWords(ln);
+
+				if (lnWords.Length > 0)
+				{
+					ln = Utils.ReplaceFirstOccurrence(ln, lnWords[0], string.Empty);
+				}
+
+				lines[i] = ln;
+			}
+
+			mainTextBox.Lines = lines;
+		}
 	}
 }

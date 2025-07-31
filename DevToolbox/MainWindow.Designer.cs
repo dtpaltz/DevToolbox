@@ -37,12 +37,14 @@
 			this.lineEndingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.operationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.selectWordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.statusStrip = new System.Windows.Forms.StatusStrip();
-			this.mainTextBox = new System.Windows.Forms.TextBox();
 			this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.commentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.emptyLinesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.extraWhitespaceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.commentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.lastWordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.statusStrip = new System.Windows.Forms.StatusStrip();
+			this.mainTextBox = new System.Windows.Forms.TextBox();
+			this.firstWordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -102,7 +104,7 @@
 			// lineEndingsToolStripMenuItem
 			// 
 			this.lineEndingsToolStripMenuItem.Name = "lineEndingsToolStripMenuItem";
-			this.lineEndingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.lineEndingsToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
 			this.lineEndingsToolStripMenuItem.Text = "Line Endings";
 			this.lineEndingsToolStripMenuItem.Click += new System.EventHandler(this.lineEndingsToolStripMenuItem_Click);
 			// 
@@ -121,6 +123,46 @@
 			this.selectWordToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.selectWordToolStripMenuItem.Text = "Select Word";
 			this.selectWordToolStripMenuItem.Click += new System.EventHandler(this.selectWordToolStripMenuItem_Click);
+			// 
+			// removeToolStripMenuItem
+			// 
+			this.removeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.commentsToolStripMenuItem,
+            this.emptyLinesToolStripMenuItem,
+            this.extraWhitespaceToolStripMenuItem,
+            this.firstWordToolStripMenuItem,
+            this.lastWordToolStripMenuItem});
+			this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
+			this.removeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.removeToolStripMenuItem.Text = "Remove";
+			// 
+			// commentsToolStripMenuItem
+			// 
+			this.commentsToolStripMenuItem.Name = "commentsToolStripMenuItem";
+			this.commentsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.commentsToolStripMenuItem.Text = "Comments";
+			this.commentsToolStripMenuItem.Click += new System.EventHandler(this.commentsToolStripMenuItem_Click);
+			// 
+			// emptyLinesToolStripMenuItem
+			// 
+			this.emptyLinesToolStripMenuItem.Name = "emptyLinesToolStripMenuItem";
+			this.emptyLinesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.emptyLinesToolStripMenuItem.Text = "Empty Lines";
+			this.emptyLinesToolStripMenuItem.Click += new System.EventHandler(this.emptyLinesToolStripMenuItem_Click);
+			// 
+			// extraWhitespaceToolStripMenuItem
+			// 
+			this.extraWhitespaceToolStripMenuItem.Name = "extraWhitespaceToolStripMenuItem";
+			this.extraWhitespaceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.extraWhitespaceToolStripMenuItem.Text = "Extra Whitespace";
+			this.extraWhitespaceToolStripMenuItem.Click += new System.EventHandler(this.extraWhitespaceToolStripMenuItem_Click);
+			// 
+			// lastWordToolStripMenuItem
+			// 
+			this.lastWordToolStripMenuItem.Name = "lastWordToolStripMenuItem";
+			this.lastWordToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.lastWordToolStripMenuItem.Text = "Last Word";
+			this.lastWordToolStripMenuItem.Click += new System.EventHandler(this.removeLastWordToolStripMenuItem_Click);
 			// 
 			// statusStrip
 			// 
@@ -143,36 +185,12 @@
 			this.mainTextBox.TabIndex = 3;
 			this.mainTextBox.WordWrap = false;
 			// 
-			// removeToolStripMenuItem
+			// firstWordToolStripMenuItem
 			// 
-			this.removeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.commentsToolStripMenuItem,
-            this.emptyLinesToolStripMenuItem,
-            this.extraWhitespaceToolStripMenuItem});
-			this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-			this.removeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-			this.removeToolStripMenuItem.Text = "Remove";
-			// 
-			// emptyLinesToolStripMenuItem
-			// 
-			this.emptyLinesToolStripMenuItem.Name = "emptyLinesToolStripMenuItem";
-			this.emptyLinesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-			this.emptyLinesToolStripMenuItem.Text = "Empty Lines";
-			this.emptyLinesToolStripMenuItem.Click += new System.EventHandler(this.emptyLinesToolStripMenuItem_Click);
-			// 
-			// extraWhitespaceToolStripMenuItem
-			// 
-			this.extraWhitespaceToolStripMenuItem.Name = "extraWhitespaceToolStripMenuItem";
-			this.extraWhitespaceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-			this.extraWhitespaceToolStripMenuItem.Text = "Extra Whitespace";
-			this.extraWhitespaceToolStripMenuItem.Click += new System.EventHandler(this.extraWhitespaceToolStripMenuItem_Click);
-			// 
-			// commentsToolStripMenuItem
-			// 
-			this.commentsToolStripMenuItem.Name = "commentsToolStripMenuItem";
-			this.commentsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-			this.commentsToolStripMenuItem.Text = "Comments";
-			this.commentsToolStripMenuItem.Click += new System.EventHandler(this.commentsToolStripMenuItem_Click);
+			this.firstWordToolStripMenuItem.Name = "firstWordToolStripMenuItem";
+			this.firstWordToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.firstWordToolStripMenuItem.Text = "First Word";
+			this.firstWordToolStripMenuItem.Click += new System.EventHandler(this.removeFirstWordToolStripMenuItem_Click);
 			// 
 			// MainWindow
 			// 
@@ -210,6 +228,8 @@
 		private System.Windows.Forms.ToolStripMenuItem emptyLinesToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem extraWhitespaceToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem commentsToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem lastWordToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem firstWordToolStripMenuItem;
 	}
 }
 

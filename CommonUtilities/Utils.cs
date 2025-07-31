@@ -118,6 +118,37 @@ namespace CommonUtilities
 
 
 
+		public static string ReplaceLastOccurrence(string source, string find, string replace)
+		{
+			int place = source.LastIndexOf(find);
 
+			if (place == -1) // If the substring is not found
+			{
+				return source;
+			}
+
+			// Remove the 'find' string from its last occurrence
+			string temp = source.Remove(place, find.Length);
+
+			// Insert the 'replace' string at the same position
+			return temp.Insert(place, replace);
+		}
+
+
+		public static string ReplaceFirstOccurrence(string source, string find, string replace)
+		{
+			int place = source.IndexOf(find);
+
+			if (place == -1) // If the substring is not found
+			{
+				return source;
+			}
+
+			// Remove the 'find' string from its last occurrence
+			string temp = source.Remove(place, find.Length);
+
+			// Insert the 'replace' string at the same position
+			return temp.Insert(place, replace);
+		}
 	}
 }
