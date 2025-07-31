@@ -42,6 +42,7 @@
 			this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.emptyLinesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.extraWhitespaceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.commentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -145,6 +146,7 @@
 			// removeToolStripMenuItem
 			// 
 			this.removeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.commentsToolStripMenuItem,
             this.emptyLinesToolStripMenuItem,
             this.extraWhitespaceToolStripMenuItem});
 			this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
@@ -164,6 +166,13 @@
 			this.extraWhitespaceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.extraWhitespaceToolStripMenuItem.Text = "Extra Whitespace";
 			this.extraWhitespaceToolStripMenuItem.Click += new System.EventHandler(this.extraWhitespaceToolStripMenuItem_Click);
+			// 
+			// commentsToolStripMenuItem
+			// 
+			this.commentsToolStripMenuItem.Name = "commentsToolStripMenuItem";
+			this.commentsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.commentsToolStripMenuItem.Text = "Comments";
+			this.commentsToolStripMenuItem.Click += new System.EventHandler(this.commentsToolStripMenuItem_Click);
 			// 
 			// MainWindow
 			// 
@@ -200,6 +209,7 @@
 		private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem emptyLinesToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem extraWhitespaceToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem commentsToolStripMenuItem;
 	}
 }
 

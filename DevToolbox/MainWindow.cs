@@ -1,6 +1,7 @@
 ﻿using CommonUtilities;
 using System;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace DevToolbox
@@ -62,6 +63,28 @@ namespace DevToolbox
 
 				var newLn = ln.TrimExtra();
 				lines[i] = newLn.Trim();
+			}
+
+			mainTextBox.Lines = lines;
+		}
+
+		private void commentsToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			var lines = mainTextBox.Lines;
+
+			string pattern = @"(//.*?$)|(/\*.*?\*/)";
+
+			for (int i = 0; i < lines.Length; i++)
+			{
+				var ln = lines[i];
+
+				if (string.IsNullOrEmpty(ln))
+				{
+					continue;
+				}
+
+				var newLn = Regex.Replace(ln, pattern, string.Empty, RegexOptions.Singleline | RegexOptions.Multiline);
+				lines[i] = newLn;
 			}
 
 			mainTextBox.Lines = lines;
