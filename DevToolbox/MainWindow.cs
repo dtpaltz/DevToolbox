@@ -18,6 +18,7 @@ namespace DevToolbox
 			InitializeComponent();
 			m_history = new List<string[]>();
 			UpdateStatusLabel();
+			UpdateButtonStates();
 		}
 
 		private void lineEndingsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -200,6 +201,22 @@ namespace DevToolbox
 			}
 
 			UpdateStatusLabel();
+			UpdateButtonStates();
+		}
+
+		private void UpdateButtonStates()
+		{
+			bool hasText = mainTextBox.Text.Length > 0;
+
+			clearToolStripMenuItem.Enabled = hasText;
+			removeToolStripMenuItem.Enabled = hasText;
+			copyAllToolStripMenuItem.Enabled = hasText;
+			lineEndingsToolStripMenuItem.Enabled = hasText;
+			selectWordToolStripMenuItem.Enabled = hasText;
+			compareToPreviousToolStripMenuItem.Enabled = hasText && m_history.Count > 1;
+
+			var selectedLineCount = mainTextBox.SelectedText.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
+			joinSelectedLinesToolStripMenuItem.Enabled = selectedLineCount.Length > 1;
 		}
 
 		private void UpdateStatusLabel()
@@ -247,6 +264,11 @@ namespace DevToolbox
 
 			// Replace the selected text with the joined text
 			mainTextBox.SelectedText = joinedText;
+		}
+
+		private void mainTextBox_MouseClick(object sender, MouseEventArgs e)
+		{
+			UpdateButtonStates();
 		}
 	}
 }

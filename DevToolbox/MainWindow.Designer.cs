@@ -212,6 +212,7 @@
 			this.mainTextBox.Size = new System.Drawing.Size(584, 214);
 			this.mainTextBox.TabIndex = 3;
 			this.mainTextBox.WordWrap = false;
+			this.mainTextBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.mainTextBox_MouseClick);
 			this.mainTextBox.TextChanged += new System.EventHandler(this.mainTextBox_TextChanged);
 			// 
 			// joinSelectedLinesToolStripMenuItem
