@@ -193,6 +193,7 @@
 			this.mainTextBox.Size = new System.Drawing.Size(800, 403);
 			this.mainTextBox.TabIndex = 3;
 			this.mainTextBox.WordWrap = false;
+			this.mainTextBox.TextChanged += new System.EventHandler(this.mainTextBox_TextChanged);
 			// 
 			// compareToPreviousToolStripMenuItem
 			// 

@@ -1,6 +1,7 @@
 ﻿using CommonUtilities;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -22,7 +23,7 @@ namespace DevToolbox
 		{
 			var form = new EditLineEndings.LineEditorForm(mainTextBox.Lines);
 			form.ShowDialog();
-			SetNewLines(form.CurrentLines);
+			mainTextBox.Lines = form.CurrentLines;
 		}
 
 		private void copyAllToolStripMenuItem_Click(object sender, EventArgs e)
@@ -39,7 +40,7 @@ namespace DevToolbox
 		{
 			var form = new WordSelector.WordSelectorForm(mainTextBox.Lines);
 			form.ShowDialog();
-			SetNewLines(form.CurrentLines);
+			mainTextBox.Lines = form.CurrentLines;
 		}
 
 		private void closeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -50,7 +51,7 @@ namespace DevToolbox
 		private void emptyLinesToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			var currLines = mainTextBox.Lines.ToList();
-			SetNewLines(currLines.Where(x => !string.IsNullOrEmpty(x)).ToArray());
+			mainTextBox.Lines = currLines.Where(x => !string.IsNullOrEmpty(x)).ToArray();
 		}
 
 		private void extraWhitespaceToolStripMenuItem_Click(object sender, EventArgs e)
@@ -70,7 +71,7 @@ namespace DevToolbox
 				lines[i] = newLn.Trim();
 			}
 
-			SetNewLines(lines);
+			mainTextBox.Lines = lines.ToArray();
 		}
 
 		private void commentsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -92,7 +93,7 @@ namespace DevToolbox
 				lines[i] = newLn;
 			}
 
-			SetNewLines(lines);
+			mainTextBox.Lines = lines;
 		}
 
 		private void removeLastWordToolStripMenuItem_Click(object sender, EventArgs e)
@@ -118,7 +119,7 @@ namespace DevToolbox
 				lines[i] = ln;
 			}
 
-			SetNewLines(lines);
+			mainTextBox.Lines = lines;
 		}
 
 		private void removeFirstWordToolStripMenuItem_Click(object sender, EventArgs e)
@@ -144,49 +145,58 @@ namespace DevToolbox
 				lines[i] = ln;
 			}
 
-			SetNewLines(lines);
+			mainTextBox.Lines = lines;
 		}
 
-
-		private void SetNewLines(string[] newLines)
+		private string CompareToolPath
 		{
-			if (!newLines.SequenceEqual(m_history[0]))
+			get
 			{
-				m_history.Insert(0, newLines);
-				mainTextBox.Lines = newLines;
+				return @"C:\Program Files\Beyond Compare 4\BCompare.exe";
 			}
 		}
 
-
-
-
-
-		// "C:\Program Files\Beyond Compare 4\BCompare.exe"
-		// System.Diagnostics.Process.Start("C:\Program Files\Beyond Compare 3\bcomp.exe", "file1.txt file2.txt /lefttitle=\"foo\" /righttitle=\"bar\"")
-
-
+		private string TempDirPath
+		{
+			get
+			{
+				string tempDirectory = Path.Combine(Path.GetTempPath(), "DevToolbox");
+				return tempDirectory;
+			}
+		}
 
 		private string CreateTempTextFile(string filename)
 		{
-
-			string tempFilePath = Path.GetTempFileName();
-			string tempDirectory = Path.Combine(Path.GetTempPath(), "DevToolbox");
-
-			if (!Directory.Exists(tempDirectory))
+			if (!Directory.Exists(TempDirPath))
 			{
-				//Directory.CreateDirectory(tempDirectory);
+				Directory.CreateDirectory(TempDirPath);
 			}
 
-			string fileName = System.IO.Path.GetTempPath() + filename + "_" + Guid.NewGuid().ToString() + ".txt";
-
-			return tempDirectory;
+			string tempFilePath = Path.Combine(TempDirPath, filename + "_" + Guid.NewGuid().ToString() + ".txt");
+			return tempFilePath;
 		}
-
-
 
 		private void compareToPreviousToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			var ttt = CreateTempTextFile("Current");
+			var currFile = CreateTempTextFile("Current");
+			File.WriteAllText(currFile, mainTextBox.Text);
+
+			var prevFile = CreateTempTextFile("Previous");
+			File.WriteAllText(prevFile, string.Join(Environment.NewLine, m_history[1]));
+
+			Process.Start(CompareToolPath, $"{prevFile} {currFile} /lefttitle=\"Previous_Version\" /righttitle=\"Current_Version\"");
+		}
+
+		private void mainTextBox_TextChanged(object sender, EventArgs e)
+		{
+			if (m_history.Count == 0)
+			{
+				m_history.Add(mainTextBox.Lines);
+			}
+			else if (!mainTextBox.Lines.SequenceEqual(m_history[0]))
+			{
+				m_history.Insert(0, mainTextBox.Lines);
+			}
 		}
 	}
 }

@@ -131,7 +131,7 @@ namespace CommonUtilities
 			string temp = source.Remove(place, find.Length);
 
 			// Insert the 'replace' string at the same position
-			return temp.Insert(place, replace);
+			return temp.Insert(place, replace).TrimEnd();
 		}
 
 
@@ -148,7 +148,7 @@ namespace CommonUtilities
 			string temp = source.Remove(place, find.Length);
 
 			// Insert the 'replace' string at the same position
-			return temp.Insert(place, replace);
+			return temp.Insert(place, replace).TrimStart();
 		}
 	}
 }
