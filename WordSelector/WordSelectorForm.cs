@@ -1,4 +1,5 @@
 ﻿using CommonUtilities;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -82,30 +83,53 @@ namespace WordSelector
 
 		private void wordGridView_KeyPress(object sender, KeyPressEventArgs e)
 		{
+			if (e.KeyChar == (char)13)
+			{
+				CurrentLines = GetSelectedColumnWords();
+				Close();
+			}
+		}
+
+		private string[] GetSelectedColumnWords()
+		{
+			List<string> selectedLinesCollection = new List<string>();
+
 			if (wordGridView.SelectedColumns.Count == 1)
 			{
 				var selectedColumn = (DataGridViewTextBoxColumn)wordGridView.SelectedColumns[0];
-				List<string> selectedLinesCollection = new List<string>();
 
-				if (e.KeyChar == (char)13)
+				foreach (DataGridViewRow row in wordGridView.Rows)
 				{
-					foreach (DataGridViewRow row in wordGridView.Rows)
+					string data = (string)row.Cells[selectedColumn.Index].Value;
+
+					if (string.IsNullOrEmpty(data))
 					{
-						string data = (string)row.Cells[selectedColumn.Index].Value;
-
-						if (string.IsNullOrEmpty(data))
-						{
-							data = string.Empty;
-						}
-
-						selectedLinesCollection.Add(data);
+						data = string.Empty;
 					}
+
+					selectedLinesCollection.Add(data);
 				}
-
-				CurrentLines = selectedLinesCollection.ToArray();
-				Close();
 			}
+				
+			return selectedLinesCollection.ToArray();
+		}
 
+		private void cancelToolStripMenuItem_Click(object sender, System.EventArgs e)
+		{
+			Close();
+		}
+
+		private void copyColumnToolStripMenuItem_Click(object sender, System.EventArgs e)
+		{
+			string words = string.Join(Environment.NewLine, GetSelectedColumnWords());
+			Clipboard.SetText(words);
+			Close();
+		}
+
+		private void selectColumnToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			CurrentLines = GetSelectedColumnWords();
+			Close();
 		}
 	}
 }
