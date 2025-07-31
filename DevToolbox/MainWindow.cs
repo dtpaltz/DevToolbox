@@ -17,6 +17,7 @@ namespace DevToolbox
 		{
 			InitializeComponent();
 			m_history = new List<string[]>();
+			UpdateStatusLabel();
 		}
 
 		private void lineEndingsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -197,6 +198,14 @@ namespace DevToolbox
 			{
 				m_history.Insert(0, mainTextBox.Lines);
 			}
+
+			UpdateStatusLabel();
+		}
+
+		private void UpdateStatusLabel()
+		{
+			string space = "               ";
+			toolStripStatusLabel.Text = $"Length: {mainTextBox.Text.Length}{space}Lines: {mainTextBox.Lines.Length}{space}History: {m_history.Count()}";
 		}
 	}
 }
