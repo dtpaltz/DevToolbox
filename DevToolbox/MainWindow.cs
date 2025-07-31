@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace DevToolbox
@@ -37,6 +38,12 @@ namespace DevToolbox
 		private void closeToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Close();
+		}
+
+		private void emptyLinesToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			var currLines = mainTextBox.Lines.ToList();
+			mainTextBox.Lines = currLines.Where(x => !string.IsNullOrEmpty(x)).ToArray();
 		}
 	}
 }
