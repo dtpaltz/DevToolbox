@@ -1,5 +1,7 @@
 ﻿using CommonUtilities;
 using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -8,16 +10,19 @@ namespace DevToolbox
 {
 	public partial class MainWindow : Form
 	{
+		private List<string[]> m_history;
+
 		public MainWindow()
 		{
 			InitializeComponent();
+			m_history = new List<string[]>();
 		}
 
 		private void lineEndingsToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			var form = new EditLineEndings.LineEditorForm(mainTextBox.Lines);
 			form.ShowDialog();
-			mainTextBox.Lines = form.CurrentLines;
+			SetNewLines(form.CurrentLines);
 		}
 
 		private void copyAllToolStripMenuItem_Click(object sender, EventArgs e)
@@ -34,7 +39,7 @@ namespace DevToolbox
 		{
 			var form = new WordSelector.WordSelectorForm(mainTextBox.Lines);
 			form.ShowDialog();
-			mainTextBox.Lines = form.CurrentLines;
+			SetNewLines(form.CurrentLines);
 		}
 
 		private void closeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -45,7 +50,7 @@ namespace DevToolbox
 		private void emptyLinesToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			var currLines = mainTextBox.Lines.ToList();
-			mainTextBox.Lines = currLines.Where(x => !string.IsNullOrEmpty(x)).ToArray();
+			SetNewLines(currLines.Where(x => !string.IsNullOrEmpty(x)).ToArray());
 		}
 
 		private void extraWhitespaceToolStripMenuItem_Click(object sender, EventArgs e)
@@ -65,7 +70,7 @@ namespace DevToolbox
 				lines[i] = newLn.Trim();
 			}
 
-			mainTextBox.Lines = lines;
+			SetNewLines(lines);
 		}
 
 		private void commentsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -87,7 +92,7 @@ namespace DevToolbox
 				lines[i] = newLn;
 			}
 
-			mainTextBox.Lines = lines;
+			SetNewLines(lines);
 		}
 
 		private void removeLastWordToolStripMenuItem_Click(object sender, EventArgs e)
@@ -113,7 +118,7 @@ namespace DevToolbox
 				lines[i] = ln;
 			}
 
-			mainTextBox.Lines = lines;
+			SetNewLines(lines);
 		}
 
 		private void removeFirstWordToolStripMenuItem_Click(object sender, EventArgs e)
@@ -139,7 +144,49 @@ namespace DevToolbox
 				lines[i] = ln;
 			}
 
-			mainTextBox.Lines = lines;
+			SetNewLines(lines);
+		}
+
+
+		private void SetNewLines(string[] newLines)
+		{
+			if (!newLines.SequenceEqual(m_history[0]))
+			{
+				m_history.Insert(0, newLines);
+				mainTextBox.Lines = newLines;
+			}
+		}
+
+
+
+
+
+		// "C:\Program Files\Beyond Compare 4\BCompare.exe"
+		// System.Diagnostics.Process.Start("C:\Program Files\Beyond Compare 3\bcomp.exe", "file1.txt file2.txt /lefttitle=\"foo\" /righttitle=\"bar\"")
+
+
+
+		private string CreateTempTextFile(string filename)
+		{
+
+			string tempFilePath = Path.GetTempFileName();
+			string tempDirectory = Path.Combine(Path.GetTempPath(), "DevToolbox");
+
+			if (!Directory.Exists(tempDirectory))
+			{
+				//Directory.CreateDirectory(tempDirectory);
+			}
+
+			string fileName = System.IO.Path.GetTempPath() + filename + "_" + Guid.NewGuid().ToString() + ".txt";
+
+			return tempDirectory;
+		}
+
+
+
+		private void compareToPreviousToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			var ttt = CreateTempTextFile("Current");
 		}
 	}
 }
