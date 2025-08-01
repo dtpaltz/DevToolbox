@@ -111,7 +111,7 @@
 			// 
 			this.selectWordToolStripMenuItem.Name = "selectWordToolStripMenuItem";
 			this.selectWordToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
-			this.selectWordToolStripMenuItem.Text = "Select Word";
+			this.selectWordToolStripMenuItem.Text = "Select Words";
 			this.selectWordToolStripMenuItem.Click += new System.EventHandler(this.selectWordToolStripMenuItem_Click);
 			// 
 			// removeToolStripMenuItem
