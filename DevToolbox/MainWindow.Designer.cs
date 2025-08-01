@@ -42,11 +42,11 @@
 			this.firstWordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.lastWordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.compareToPreviousToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.joinSelectedLinesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.lineEndingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.statusStrip = new System.Windows.Forms.StatusStrip();
 			this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
 			this.mainTextBox = new System.Windows.Forms.TextBox();
-			this.joinSelectedLinesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.lineEndingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip.SuspendLayout();
 			this.statusStrip.SuspendLayout();
 			this.SuspendLayout();
@@ -168,6 +168,20 @@
 			this.compareToPreviousToolStripMenuItem.Text = "Compare to Previous";
 			this.compareToPreviousToolStripMenuItem.Click += new System.EventHandler(this.compareToPreviousToolStripMenuItem_Click);
 			// 
+			// joinSelectedLinesToolStripMenuItem
+			// 
+			this.joinSelectedLinesToolStripMenuItem.Name = "joinSelectedLinesToolStripMenuItem";
+			this.joinSelectedLinesToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+			this.joinSelectedLinesToolStripMenuItem.Text = "Join Selected Lines";
+			this.joinSelectedLinesToolStripMenuItem.Click += new System.EventHandler(this.joinSelectedLinesToolStripMenuItem_Click);
+			// 
+			// lineEndingsToolStripMenuItem
+			// 
+			this.lineEndingsToolStripMenuItem.Name = "lineEndingsToolStripMenuItem";
+			this.lineEndingsToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+			this.lineEndingsToolStripMenuItem.Text = "Edit Line Endings";
+			this.lineEndingsToolStripMenuItem.Click += new System.EventHandler(this.editLineEndingsToolStripMenuItem_Click_1);
+			// 
 			// statusStrip
 			// 
 			this.statusStrip.BackColor = System.Drawing.SystemColors.ButtonFace;
@@ -198,19 +212,6 @@
 			this.mainTextBox.WordWrap = false;
 			this.mainTextBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.mainTextBox_MouseClick);
 			this.mainTextBox.TextChanged += new System.EventHandler(this.mainTextBox_TextChanged);
-			// 
-			// joinSelectedLinesToolStripMenuItem
-			// 
-			this.joinSelectedLinesToolStripMenuItem.Name = "joinSelectedLinesToolStripMenuItem";
-			this.joinSelectedLinesToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
-			this.joinSelectedLinesToolStripMenuItem.Text = "Join Selected Lines";
-			this.joinSelectedLinesToolStripMenuItem.Click += new System.EventHandler(this.joinSelectedLinesToolStripMenuItem_Click);
-			// 
-			// lineEndingsToolStripMenuItem
-			// 
-			this.lineEndingsToolStripMenuItem.Name = "lineEndingsToolStripMenuItem";
-			this.lineEndingsToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
-			this.lineEndingsToolStripMenuItem.Text = "Edit Line Endings";
 			// 
 			// MainWindow
 			// 

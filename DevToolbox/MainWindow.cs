@@ -21,13 +21,6 @@ namespace DevToolbox
 			UpdateButtonStates();
 		}
 
-		private void lineEndingsToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			var form = new EditLineEndings.LineEditorForm(mainTextBox.Lines);
-			form.ShowDialog();
-			mainTextBox.Lines = form.CurrentLines;
-		}
-
 		private void copyAllToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			Clipboard.SetText(mainTextBox.Text);
@@ -269,6 +262,13 @@ namespace DevToolbox
 		private void mainTextBox_MouseClick(object sender, MouseEventArgs e)
 		{
 			UpdateButtonStates();
+		}
+
+		private void editLineEndingsToolStripMenuItem_Click_1(object sender, EventArgs e)
+		{
+			var form = new EditLineEndings.LineEditorForm(mainTextBox.Lines);
+			form.ShowDialog();
+			mainTextBox.Lines = form.CurrentLines;
 		}
 	}
 }
