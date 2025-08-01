@@ -184,13 +184,16 @@ namespace DevToolbox
 
 		private void mainTextBox_TextChanged(object sender, EventArgs e)
 		{
-			if (m_history.Count == 0)
+			if (mainTextBox.Text.Length > 0)
 			{
-				m_history.Add(mainTextBox.Lines);
-			}
-			else if (!mainTextBox.Lines.SequenceEqual(m_history[0]))
-			{
-				m_history.Insert(0, mainTextBox.Lines);
+				if (m_history.Count == 0)
+				{
+					m_history.Add(mainTextBox.Lines);
+				}
+				else if (!mainTextBox.Lines.SequenceEqual(m_history[0]))
+				{
+					m_history.Insert(0, mainTextBox.Lines);
+				}
 			}
 
 			UpdateStatusLabel();
