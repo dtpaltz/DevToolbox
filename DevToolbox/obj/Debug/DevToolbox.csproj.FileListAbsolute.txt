@@ -18,3 +18,6 @@ C:\Users\dtpal\source\repos\DevToolbox\DevToolbox\bin\Debug\CommonUtilities.pdb
 C:\Users\dtpal\source\repos\DevToolbox\DevToolbox\bin\Debug\WordSelector.exe
 C:\Users\dtpal\source\repos\DevToolbox\DevToolbox\bin\Debug\WordSelector.pdb
 C:\Users\dtpal\source\repos\DevToolbox\DevToolbox\bin\Debug\WordSelector.exe.config
+C:\Users\dtpal\source\repos\DevToolbox\DevToolbox\bin\Debug\PropertyGenerator.exe
+C:\Users\dtpal\source\repos\DevToolbox\DevToolbox\bin\Debug\PropertyGenerator.pdb
+C:\Users\dtpal\source\repos\DevToolbox\DevToolbox\bin\Debug\PropertyGenerator.exe.config

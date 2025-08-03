@@ -88,6 +88,10 @@
       <Project>{e162927b-47c0-4bb6-b14b-77708ea3f981}</Project>
       <Name>EditLineEndings</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PropertyGenerator\PropertyGenerator.csproj">
+      <Project>{fa2d06e7-ae09-47cf-a2dd-2ca124d832e4}</Project>
+      <Name>PropertyGenerator</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WordSelector\WordSelector.csproj">
       <Project>{3da42d68-005f-4c7e-b50b-945bbdaa98c1}</Project>
       <Name>WordSelector</Name>

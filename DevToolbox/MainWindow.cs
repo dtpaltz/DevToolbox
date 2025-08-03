@@ -17,8 +17,7 @@ namespace DevToolbox
 		{
 			InitializeComponent();
 			m_history = new List<string[]>();
-			UpdateStatusLabel();
-			UpdateButtonStates();
+			UpdateView();
 		}
 
 		private void copyAllToolStripMenuItem_Click(object sender, EventArgs e)
@@ -29,6 +28,14 @@ namespace DevToolbox
 		private void clearToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			mainTextBox.Clear();
+			m_history.Clear();
+			UpdateView();
+		}
+
+		private void UpdateView()
+		{
+			UpdateStatusLabel();
+			UpdateButtonStates();
 		}
 
 		private void selectWordToolStripMenuItem_Click(object sender, EventArgs e)
@@ -196,8 +203,7 @@ namespace DevToolbox
 				}
 			}
 
-			UpdateStatusLabel();
-			UpdateButtonStates();
+			UpdateView();
 		}
 
 		private void UpdateButtonStates()
@@ -272,6 +278,17 @@ namespace DevToolbox
 			var form = new EditLineEndings.LineEditorForm(mainTextBox.Lines);
 			form.ShowDialog();
 			mainTextBox.Lines = form.CurrentLines;
+		}
+
+		private void propertiesToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			var form = new PropertyGenerator.PropertyGeneratorForm(mainTextBox.Lines);
+			form.ShowDialog();
+
+			if (!string.IsNullOrEmpty(form.ResultText))
+			{
+				mainTextBox.Text = form.ResultText;
+			}
 		}
 	}
 }

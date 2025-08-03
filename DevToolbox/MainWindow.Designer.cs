@@ -47,6 +47,8 @@
 			this.statusStrip = new System.Windows.Forms.StatusStrip();
 			this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
 			this.mainTextBox = new System.Windows.Forms.TextBox();
+			this.generateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.propertiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip.SuspendLayout();
 			this.statusStrip.SuspendLayout();
 			this.SuspendLayout();
@@ -102,7 +104,8 @@
             this.removeToolStripMenuItem,
             this.compareToPreviousToolStripMenuItem,
             this.joinSelectedLinesToolStripMenuItem,
-            this.lineEndingsToolStripMenuItem});
+            this.lineEndingsToolStripMenuItem,
+            this.generateToolStripMenuItem});
 			this.operationsToolStripMenuItem.Name = "operationsToolStripMenuItem";
 			this.operationsToolStripMenuItem.Size = new System.Drawing.Size(85, 21);
 			this.operationsToolStripMenuItem.Text = "Operations";
@@ -213,6 +216,21 @@
 			this.mainTextBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.mainTextBox_MouseClick);
 			this.mainTextBox.TextChanged += new System.EventHandler(this.mainTextBox_TextChanged);
 			// 
+			// generateToolStripMenuItem
+			// 
+			this.generateToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.propertiesToolStripMenuItem});
+			this.generateToolStripMenuItem.Name = "generateToolStripMenuItem";
+			this.generateToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+			this.generateToolStripMenuItem.Text = "Generate";
+			// 
+			// propertiesToolStripMenuItem
+			// 
+			this.propertiesToolStripMenuItem.Name = "propertiesToolStripMenuItem";
+			this.propertiesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.propertiesToolStripMenuItem.Text = "Properties";
+			this.propertiesToolStripMenuItem.Click += new System.EventHandler(this.propertiesToolStripMenuItem_Click);
+			// 
 			// MainWindow
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -256,6 +274,8 @@
 		private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
 		private System.Windows.Forms.ToolStripMenuItem joinSelectedLinesToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem lineEndingsToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem generateToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem propertiesToolStripMenuItem;
 	}
 }
 
